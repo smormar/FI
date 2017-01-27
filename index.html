@@ -21,9 +21,6 @@
 				});
 	</script>
 
-
-
-
 <script>
 function fecha(){
 	var request = new XMLHttpRequest();
@@ -31,12 +28,13 @@ function fecha(){
 	request.send();
 	request.onreadystatechange = function() {
 	if (request.readyState === 4 && request.status === 200){
-		var verif=request.responseText;
-		if (verif=="yes"){$('#content').show();} else {$('#content').hide();}
+//console.log(typeof parseFloat(request.responseText));
+//alert(request.responseText);
+		if (parseFloat(request.responseText) === 1){$('#content').show();	} else {$('#content').hide();console.log(request.responseText);}
 	} else {$('#content').hide();}
 }
 
-
+}
 function fecha2(track){
 	var request = new XMLHttpRequest();
 //	var result = [];
@@ -134,7 +132,7 @@ document.getElementById('help13').innerHTML ='';
 <script>
 function calctp(inputstp)
 {
-fecha;
+fecha();
 fecha2("cruzado");
 var SAB = document.inputstp.SAB.value;
 var SAC = document.inputstp.SAC.value; 
@@ -203,7 +201,7 @@ document.inputstp.SCB.value = null;
 //Calculo tipo comprador y vendedor recíproco
 function calcrec(inputrec)
 {
-fecha;
+fecha();
 fecha2("reciproco");
 var SABc = document.inputrec.SABc.value;
 var SABv = document.inputrec.SABv.value;
@@ -234,7 +232,7 @@ document.inputrec.SABv.value = null;
 <script>
 
 function calcsw(inputsw){
-fecha;
+fecha();
 fecha2("p_swap");
 var SABc = document.inputsw.SABc.value;
 var SABv = document.inputsw.SABv.value;
@@ -278,7 +276,7 @@ document.inputsw.swv.value = null;
 
 function calcat(inputat)
 {
-fecha;
+fecha();
 fecha2("a_triang");
 var SABc = document.inputat.SABc.value;
 var SABv = document.inputat.SABv.value;
@@ -397,7 +395,7 @@ document.inputat.SBCv.value = null;
 
 function calcap(inputap)
 {
-fecha;
+fecha();
 fecha2("a_plazo");
 var SABc = document.inputap.SABc.value;
 var SABv = document.inputap.SABv.value;
@@ -461,7 +459,7 @@ document.inputap.t.value = null;
 
 function calccob(inputcob)
 {
-fecha;
+fecha();
 fecha2("cob");
 var SABc = document.inputcob.SABc.value;
 var SABv = document.inputcob.SABv.value;
@@ -539,7 +537,7 @@ document.inputcob.amount.value = null;
 <script>
 function calcrcob(inputrcob)
 {
-fecha;
+fecha();
 fecha2("reajuste");
 var SABc = document.inputrcob.SABc.value;
 var SABv = document.inputrcob.SABv.value;
@@ -1018,7 +1016,7 @@ document.inputrcob.amount2.value = null;
 <script>
 function calcswap(inputswap)
 {
-fecha;
+fecha();
 fecha2("swap");
 var Fax = document.inputswap.Fax.value;
 var Fbx = document.inputswap.Fbx.value;
@@ -1084,7 +1082,7 @@ document.inputswap.benx.value = null;
 <script>
 function calcarbfd(inputarbfd)
 {
-fecha;
+fecha();
 fecha2("futuro");
 var FAB = document.inputarbfd.FAB.value;
 var SAB = document.inputarbfd.SAB.value;
@@ -1132,7 +1130,7 @@ document.inputarbfd.T.value = null;
 <script>
 function calcopbasic(inputopbasic)
 {
-fecha;
+fecha();
 fecha2("opciones");
 var operacion = document.inputopbasic.operacion.value;
 var tipo = document.inputopbasic.tipo.value;
@@ -1186,7 +1184,7 @@ document.inputopbasic.ST.value = null;
 <script>
 function calcopbin(inputopbin)
 {
-fecha;
+fecha();
 fecha2("binomial");
 var pasos = document.inputopbin.pasos.value;
 var K = document.inputopbin.K.value;
